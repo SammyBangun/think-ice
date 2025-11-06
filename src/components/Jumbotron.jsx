@@ -1,11 +1,7 @@
-import { Box, Flex, Heading, Text, Button, Image } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
 import iceImage from '../assets/ice-blue-tr.png';
 import { motion } from "framer-motion";
-
-const MotionBox = motion(Box);
-const MotionText = motion(Text);
-const MotionHeading = motion(Heading);
-const MotionImage = motion(Image);
+import { MotionBox, MotionText, MotionHeading, MotionImage } from '../functions/addMotion'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -78,6 +74,7 @@ export default function Jumbotron() {
                     maxW="400px"
                     borderRadius="lg"
                     variants={itemVariants}
+                    className="hover:cursor-pointer transform hover:scale-120"
                 />
             </Flex>
         </Box>

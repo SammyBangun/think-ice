@@ -1,21 +1,15 @@
 import {
     Box,
-    Heading,
-    Container,
-    Text,
-    VStack,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel
 }
     from "@chakra-ui/react";
 import Jumbotron from "../components/Jumbotron";
+import FirstSection from "../components/FirstSection";
 
 function Home() {
     return (
         <Box>
             <Jumbotron />
+            <FirstSection />
         </Box>
     );
 }
