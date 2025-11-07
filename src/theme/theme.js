@@ -11,6 +11,10 @@ const theme = extendTheme({
       iceYellow: "#F9F9A7",
     },
   },
+  fonts: {
+    heading: `'Poppins', sans-serif`,
+    body: `'Poppins', sans-serif`,
+  },
 });
 
 export default theme;

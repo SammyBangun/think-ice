@@ -4,7 +4,6 @@ import {
     Flex,
     Card,
     CardBody,
-    Center,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
