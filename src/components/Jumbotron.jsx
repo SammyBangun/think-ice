@@ -47,24 +47,34 @@ export default function Jumbotron() {
                         lineHeight="short"
                         variants={itemVariants}
                     >
-                        <Text as="span" color="white">
+                        <Text
+                            as="span"
+                            color="white"
+                            fontSize={{ base: "4xl", md: "6xl" }}
+                            fontWeight="bold"
+                            display="block"
+                        >
                             Think ICE<br />
                         </Text>
-                        <Text as="span" color="#00FFB2">
+
+                        <Text
+                            as="span"
+                            color="#00FFB2"
+                        >
                             “A thinking method as cold and as clear as ice.”
                         </Text>
                     </MotionHeading>
 
                     <MotionText fontSize="lg" mt={4} color="gray.100" variants={itemVariants}>
-                        From the beginning to scaling. We are your marketing partners who will make your
+                        From the beginning to every stage of growth, Think ICE guides you to
                         <Text as="span" fontWeight="bold" color="white">
-                            {' '}startup or veteran clinic
+                            {' '}think with
                         </Text>{' '}
-                        stand out.
+                        clarity, steadiness, and precision.
                     </MotionText>
 
                     <MotionText mt={4} color="#5FFFD6" fontWeight="bold" variants={itemVariants}>
-                        Based in DIFFERENTIATION and UNIQUENESS
+                        A mindset built on DIFFERENTIATION and shaped by true UNIQUENESS.
                     </MotionText>
                 </MotionBox>
 
