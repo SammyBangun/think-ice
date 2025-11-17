@@ -78,7 +78,7 @@ const slideRight = {
     },
 };
 
-export default function ThinkICESectionsPremium() {
+export default function SecondSection() {
     const theme = useTheme();
     const { thinkICE } = theme.colors;
 
