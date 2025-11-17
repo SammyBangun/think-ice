@@ -25,7 +25,7 @@ const itemVariants = {
 
 export default function Jumbotron() {
     return (
-        <Box bg="thinkICE.cobaltBlue" px={{ base: 4, md: 16 }} py={{ base: 10, md: 24 }} color="white">
+        <Box id='Jumbotron' bg="thinkICE.cobaltBlue" px={{ base: 4, md: 16 }} py={{ base: 10, md: 24 }} color="white">
             <Flex
                 direction={{ base: 'column', md: 'row' }}
                 align="center"

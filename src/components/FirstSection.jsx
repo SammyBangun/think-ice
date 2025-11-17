@@ -26,7 +26,7 @@ export default function FirstSection() {
     ];
 
     return (
-        <Box bg="thinkICE.cobaltBlue" py={16} px={{ base: 6, md: 12 }} color="white">
+        <Box id="FirstSection" bg="thinkICE.cobaltBlue" py={16} px={{ base: 6, md: 12 }} color="white">
             <Flex
                 flexDirection={{ base: "column", md: "row" }}
                 justify="center"

@@ -1,23 +1,37 @@
-import { Box, Flex, HStack, Button, Text } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Flex, HStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 import { FaRegSnowflake } from "react-icons/fa";
 import { MotionText, MotionButton } from "../functions/addMotion";
 
 const MotionIcon = motion(FaRegSnowflake);
 
 function Navbar() {
+    const navItems = [
+        { label: "Home", to: "Jumbotron" },
+        { label: "ICE", to: "FirstSection" },
+        { label: "About", to: "SecondSection" },
+        { label: "Philosophy", to: "ThirdSection" },
+    ];
+
     return (
         <Box
             bg="thinkICE.cobaltBlue"
             px={8}
             py={3}
+            position="sticky"
+            top={0}
+            left={0}
+            right={0}
+            zIndex={1000}
             boxShadow="0 6px 20px rgba(255, 255, 255, 0.15)"
             borderBottom="1px solid rgba(255, 255, 255, 0.15)"
             backdropFilter="blur(10px)"
             bgGradient="linear(to-r, thinkICE.cobaltBlue, thinkICE.tealLightAlpha)"
         >
             <Flex h={16} alignItems="center" justifyContent="space-between">
+
+                {/* Logo */}
                 <HStack
                     spacing={2}
                     cursor="pointer"
@@ -34,8 +48,12 @@ function Navbar() {
                             hover: {
                                 rotate: 360,
                                 scale: 1.2,
-                                filter: "drop-shadow(0 0 10px rgba(200, 240, 255, 0.8))",
-                                transition: { duration: 1.2, ease: "easeInOut" },
+                                filter:
+                                    "drop-shadow(0 0 10px rgba(200, 240, 255, 0.8))",
+                                transition: {
+                                    duration: 1.2,
+                                    ease: "easeInOut",
+                                },
                             },
                         }}
                     />
@@ -45,12 +63,17 @@ function Navbar() {
                         fontWeight="semibold"
                         color="thinkICE.iceYellow"
                         variants={{
-                            rest: { scale: 1, textShadow: "0 0 0 rgba(255,255,255,0)" },
+                            rest: { scale: 1, opacity: 0.8 },
                             hover: {
                                 scale: 1.15,
+                                opacity: 1,
                                 textShadow:
                                     "0 0 8px rgba(255,255,255,0.6), 0 0 14px rgba(180,220,255,0.8)",
-                                transition: { type: "spring", stiffness: 200, damping: 12 },
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 12,
+                                },
                             },
                         }}
                     >
@@ -58,37 +81,42 @@ function Navbar() {
                     </MotionText>
                 </HStack>
 
-                <HStack as="nav" spacing={6} display={{ base: "none", md: "flex" }}>
-                    {[
-                        { label: "Home", to: "/" },
-                        { label: "ICE", to: "/steps" },
-                        { label: "About", to: "/techniques" },
-                        { label: "Philosophy", to: "/philosophy" },
-                    ].map((link) => (
-                        <MotionButton
+                {/* Navigation */}
+                <HStack spacing={6} display={{ base: "none", md: "flex" }}>
+                    {navItems.map((link) => (
+                        <ScrollLink
                             key={link.to}
-                            as={RouterLink}
                             to={link.to}
-                            variant="ghost"
-                            color="thinkICE.iceYellow"
-                            fontWeight="medium"
-                            _hover={{ textDecoration: "none" }}
-                            whileHover={{
-                                scale: 1.1,
-                                background:
-                                    "rgba(255, 255, 255, 0.1)",
-                                backdropFilter: "blur(8px)",
-                                boxShadow:
-                                    "0 0 12px rgba(173, 216, 230, 0.6), inset 0 0 6px rgba(255, 255, 255, 0.2)",
-                            }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                            rounded="md"
-                            px={3}
-                            py={2}
+                            smooth={true}
+                            duration={700}
+                            offset={-80}
+                            spy={true}
                         >
-                            {link.label}
-                        </MotionButton>
+                            <MotionButton
+                                variant="ghost"
+                                color="thinkICE.iceYellow"
+                                fontWeight="medium"
+                                _hover={{ textDecoration: "none" }}
+                                whileHover={{
+                                    scale: 1.1,
+                                    background: "rgba(255, 255, 255, 0.1)",
+                                    backdropFilter: "blur(8px)",
+                                    boxShadow:
+                                        "0 0 12px rgba(173, 216, 230, 0.6), inset 0 0 6px rgba(255, 255, 255, 0.2)",
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 10,
+                                }}
+                                rounded="md"
+                                px={3}
+                                py={2}
+                            >
+                                {link.label}
+                            </MotionButton>
+                        </ScrollLink>
                     ))}
                 </HStack>
             </Flex>

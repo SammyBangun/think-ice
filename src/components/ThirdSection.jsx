@@ -22,6 +22,7 @@ export default function ThirdSection() {
 
     return (
         <Box
+            id="ThirdSection"
             bg={thinkICE.cobaltBlue}
             py={{ base: 16, md: 24 }}
             px={{ base: 6, md: 12 }}
@@ -91,7 +92,6 @@ export default function ThirdSection() {
                 </VStack>
             </MotionBox>
 
-            {/* Keyframe Animation */}
             <style>{`
                 @keyframes sweep {
                     0% { transform: translateX(-120%); }

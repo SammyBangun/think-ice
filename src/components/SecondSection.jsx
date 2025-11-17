@@ -84,6 +84,7 @@ export default function SecondSection() {
 
     return (
         <Box
+            id="SecondSection"
             bg={thinkICE?.cobaltBlue ?? "#0072ce"}
             py={{ base: 12, md: 20 }}
             px={{ base: 6, md: 12 }}
