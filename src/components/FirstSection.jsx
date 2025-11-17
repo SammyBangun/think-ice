@@ -42,30 +42,60 @@ export default function FirstSection() {
                         whileInView="visible"
                         viewport={{ once: true }}
                         custom={i}
-                        bg="thinkICE.tealLight"
-                        color="thinkICE.navy"
-                        borderRadius="xl"
-                        boxShadow="0 6px 20px rgba(0, 0, 0, 0.25)"
-                        p={5}
-                        w={{ base: "100%", md: "30%" }}
+                        bg="rgba(255, 255, 255, 0.15)"
+                        backdropFilter="blur(12px)"
+                        border="1px solid rgba(255, 255, 255, 0.25)"
+                        borderRadius="2xl"
+                        boxShadow="0 8px 25px rgba(0, 0, 0, 0.25)"
+                        p={6}
+                        w={{ base: "100%", md: "28%" }}
                         cursor="pointer"
-                        transition="all 0.3s ease"
+                        transition="all 0.4s cubic-bezier(0.22, 1, 0.36, 1)"
+                        position="relative"
+                        overflow="hidden"
+                        _before={{
+                            content: '""',
+                            position: "absolute",
+                            top: "-20%",
+                            left: "-20%",
+                            w: "140%",
+                            h: "140%",
+                            bg: "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0))",
+                            opacity: 0,
+                            transition: "0.4s",
+                        }}
                         whileHover={{
-                            scale: 1.05,
-                            backgroundColor: "#3AAFA9",
-                            boxShadow: "0 0 60px #F9F9A7",
-                            transition: { duration: 0.2 },
+                            scale: 1.06,
+                            rotate: 1,
+                            boxShadow: "0 0 45px rgba(91, 200, 172, 0.55)",
+                            transition: { duration: 0.25 },
                         }}
                         _hover={{
-                            color: "white",
-                            transition: "color 0.3s ease-in-out",
+                            _before: { opacity: 1 },
+                            border: "1px solid rgba(249, 249, 167, 0.7)",
                         }}
                     >
                         <CardBody>
-                            <Text fontSize="xl" fontWeight="semibold" transition="color 0.3s ease">
+                            <Text
+                                fontSize="2xl"
+                                fontWeight="extrabold"
+                                letterSpacing="0.5px"
+                                bgGradient="linear(to-r, thinkICE.iceYellow, white)"
+                                bgClip="text"
+                                textShadow="0px 0px 12px rgba(249, 249, 167, 0.35)"
+                                mb={2}
+                            >
                                 {item.title}
                             </Text>
-                            <Text fontSize="lg" fontWeight="semibold" transition="color 0.3s ease">
+
+                            <Text
+                                fontSize="lg"
+                                fontWeight="medium"
+                                color="white"
+                                opacity={0.9}
+                                lineHeight="1.6"
+                                letterSpacing="0.2px"
+                            >
                                 {item.text}
                             </Text>
                         </CardBody>

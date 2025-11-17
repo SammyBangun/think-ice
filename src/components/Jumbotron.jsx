@@ -51,10 +51,22 @@ export default function Jumbotron() {
                             as="span"
                             color="white"
                             fontSize={{ base: "4xl", md: "6xl" }}
-                            fontWeight="bold"
+                            fontWeight="extrabold"
                             display="block"
+                            letterSpacing="1px"
+                            bgGradient="linear(to-r, #F9F9A7, #ffffff, #5BC8AC)"
+                            bgClip="text"
+                            position="relative"
+                            textShadow="
+                                0 0 20px rgba(255, 255, 255, 0.35),
+                                0 0 35px rgba(91, 200, 172, 0.25),
+                                0 0 55px rgba(0, 114, 206, 0.25)
+                            "
+                            sx={{
+                                WebkitTextStroke: "1px rgba(255, 255, 255, 0.2)",
+                            }}
                         >
-                            Think ICE<br />
+                            Think ICE
                         </Text>
 
                         <Text
